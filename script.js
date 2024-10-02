@@ -55,4 +55,23 @@ const generateFortune = () => {
   return randomMessageObj;
 };
 
-console.log(generateFortune());
+// console.log(generateFortune());
+
+//Create display function
+const displayFortune = (fortuneData) => {
+  //Error handling
+  if (!fortuneData || typeof fortuneData !== "object") {
+    return "Invalid fortune object";
+  }
+  //Destructuring
+  const { Prediction, Advice, Mood, LuckyNumbers } = fortuneData;
+
+  return `
+  Prediction: ${Prediction}
+  Advice: ${Advice}
+  Mood: ${Mood}
+  LuckyNumbers: ${LuckyNumbers.join(", ")}
+  `;
+};
+
+console.log(displayFortune(generateFortune()));
