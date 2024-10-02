@@ -12,7 +12,6 @@ const advice = [
   "Focus on what you can control.",
   "Take time to relax and recharge.",
 ];
-const luckyNumbers = [];
 const moods = [
   "You will feel energized and motivated.",
   "A sense of calm will wash over you.",
@@ -43,3 +42,14 @@ const generateFortune = () => {
 };
 
 console.log(generateFortune());
+
+const generateLuckyNumbers = () => {
+  let luckyNumbers = [];
+  for (let i = 0; i < 3; i++) {
+    let generateNumber = Math.floor(Math.random() * 100) + 1;
+    luckyNumbers.push(generateNumber);
+  }
+  return luckyNumbers;
+};
+
+console.log(generateLuckyNumbers());
